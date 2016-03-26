@@ -7,6 +7,7 @@ public class EnemyBoss : EnemyBase {
     {
         base.Start();
         base.hp = 300;
+        base.score = 500;
     }
 
     public override void OnTriggerEnter(Collider target)

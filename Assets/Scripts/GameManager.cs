@@ -16,6 +16,8 @@ public class GameManager : MonoBehaviour
 
 	public StatusManager statusManager;
 
+    public UIManager uiManager;
+
 	public Player player;
 
 	// Use this for initialization
@@ -49,6 +51,7 @@ public class GameManager : MonoBehaviour
 	public void DestroyPlayer ()
 	{
 		Destroy (player.gameObject);
+        uiManager.ShowResultScore(statusManager.score);
 	}
 
 

@@ -30,5 +30,6 @@ public class EnemyGenerator : MonoBehaviour
 		EnemyBase enemy = e.GetComponent<EnemyBase> ();
 		enemy.gameManager = gameManager;
 		enemy.shotbulletRate = Random.Range (0.1f, 0.8f);
+        enemy.score = 100;
 	}
 }

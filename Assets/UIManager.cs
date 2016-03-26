@@ -7,6 +7,8 @@ public class UIManager : MonoBehaviour {
     [SerializeField]
     private GameManager gameManager;
 
+    public ResultPanel resultPanel;
+
     public Text scoreText;
     public Text lifeText;
 
@@ -25,5 +27,11 @@ public class UIManager : MonoBehaviour {
     {
         scoreText.text = gameManager.StatusManager.score.ToString();
         lifeText.text = gameManager.StatusManager.hp.ToString();
+    }
+
+    public void ShowResultScore(int score_)
+    {
+        resultPanel.SetScore(score_);
+        resultPanel.Show();
     }
 }
