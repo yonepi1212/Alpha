@@ -1,15 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class GameSceneBackButton : MonoBehaviour {
+public class GameSceneBackButton : MonoBehaviour
+{
 
-    public void OnClick()
-    {
-        Invoke("Invoke", 0.2f);
-    }
+	public void OnClick ()
+	{
+		Time.timeScale = 1.0f;
+		Invoke ("Invoke", 0.2f);
+	}
 
-    private void Invoke()
-    {
-        Application.LoadLevel("Title");
-    }
+	private void Invoke ()
+	{
+		Application.LoadLevel ("Title");
+	}
 }
