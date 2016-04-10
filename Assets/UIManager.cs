@@ -31,6 +31,13 @@ public class UIManager : MonoBehaviour {
 
     public void ShowResultScore(int score_)
     {
+		var highScore = gameManager.StatusManager.GetHighScore ();
+
+		if (score_ > highScore) {
+			PlayerPrefs.SetInt ("HighScore", score_);
+		}
+
+
         resultPanel.SetScore(score_);
         resultPanel.Show();
     }

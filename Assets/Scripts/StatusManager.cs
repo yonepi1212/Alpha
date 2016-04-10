@@ -31,4 +31,14 @@ public class StatusManager
 		score += score_;
 
 	}
+
+	public int GetHighScore()
+	{
+		return PlayerPrefs.GetInt ("HighScore");
+	}
+
+	public void SetHighScore(int score_)
+	{
+		PlayerPrefs.SetInt ("HighScore",score_);
+	}
 }

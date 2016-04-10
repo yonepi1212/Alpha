@@ -21,8 +21,14 @@ public class ResultPanel : MonoBehaviour {
     {
         scoreText.text = "Score\n" + score_;
         // TODO: ハイスコア
-        highScoreText.text = "HighScore\n" + score_;
+        //highScoreText.text = "HighScore\n" + score_;
+		SetHighScore ();
     }
+
+	public void SetHighScore()
+	{
+		highScoreText.text = "HighScore\n" + PlayerPrefs.GetInt("HighScore");
+	}
 
     public void Show()
     {
