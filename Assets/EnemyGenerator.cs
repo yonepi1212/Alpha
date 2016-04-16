@@ -13,23 +13,23 @@ public class EnemyGenerator : MonoBehaviour
 	void Start ()
 	{
 		zakoEnemy = Resources.Load ("Prefab/ZakoEnemy01") as GameObject;
-		InvokeRepeating ("GenerateZako", 0f, 2.5f);
+		//InvokeRepeating ("GenerateZako", 0f, 2.5f);
 	}
 
 	// Update is called once per frame
 	void Update ()
 	{
-	
+
 	}
 
-	private void GenerateZako ()
+	public void GenerateZako ()
 	{
 		var e = Instantiate (zakoEnemy);
-		var randomRange = new Vector3 (Random.Range (-2, 2), 0, Random.Range (-3, 3));
+		var randomRange = new Vector3 (Random.Range (-2f, 2f), 0f, Random.Range (0f, 7f));
 		e.transform.position = transform.position + randomRange;
 		EnemyBase enemy = e.GetComponent<EnemyBase> ();
 		enemy.gameManager = gameManager;
 		enemy.shotbulletRate = Random.Range (0.1f, 0.8f);
-        enemy.score = 100;
+		enemy.score = 100;
 	}
 }
